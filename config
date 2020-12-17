@@ -1,12 +1,12 @@
 {
   "inbounds": [
     {
-      "port": 23333,
+      "port": ,
       "protocol": "vmess",    
       "settings": {
         "clients": [
           {
-            "id": "c90aa152-fdb6-4b09-b758-c06aec08459d",
+            "id": "",
             "alterId": 64
           }
         ]
