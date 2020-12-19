@@ -1,3 +1,3 @@
 Debian 10  
 
-wget "https://raw.githubusercontent.com/emaitian/inbox/main/config.sh" && chmod +x config.sh && bash config.sh
+wget "https://raw.githubusercontent.com/emaitian/inbox/main/install.sh" && chmod +x install.sh && bash install.sh
