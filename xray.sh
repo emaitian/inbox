@@ -158,7 +158,7 @@ cat > /usr/local/etc/xray/config.json << EOF
         "ip": [
           "geoip:private"
         ],
-        "outboundTag": "block"
+        "outboundTag": "direct"
       },
 
       {
@@ -166,7 +166,7 @@ cat > /usr/local/etc/xray/config.json << EOF
         "domain": [
           "geosite:category-ads-all"
         ],
-        "outboundTag": "block"
+        "outboundTag": "direct"
       }
     ]
   },
