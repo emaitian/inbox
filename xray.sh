@@ -289,7 +289,7 @@ http {
     server {
             listen 80;
             server_name nevie.xyz;
-            return 301 https://$http_host$request_uri;
+            return 301 https://\$http_host\$request_uri;
     }
 
     server {
