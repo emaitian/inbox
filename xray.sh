@@ -100,6 +100,7 @@ http {
 #}
 EOF
 systemctl restart nginx
+echo
 #
 echo
 echo -e "\033[49;37;7m accept 80 and 443 port \033[0m"
