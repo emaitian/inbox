@@ -1,5 +1,4 @@
 #!/bin/bash
-echo
 echo -e "\033[49;37;7m update apt and install nginx \033[0m"
 echo -----------------------------------
 apt update && apt install nginx -y
@@ -52,11 +51,11 @@ http {
 	##
 	# Virtual Host Configs
 	##
-  server {
-          listen 80;
-          server_name nevie.xyz;
-          root /data/www;
-  }
+	server {
+		listen 80;
+		server_name nevie.xyz;
+		root /data/www;
+	}
 	include /etc/nginx/conf.d/*.conf;
 	include /etc/nginx/sites-enabled/*;
 }
@@ -114,8 +113,6 @@ wget https://github.com/XTLS/Xray-install/raw/main/install-release.sh
 bash install-release.sh
 chmod a+w /var/log/xray/*.log
 rm /usr/local/etc/xray/config.json
-echo -n "uuid: "
-read uuid
 cat > /usr/local/etc/xray/config.json << EOF
 {
   "log": {
@@ -136,7 +133,7 @@ cat > /usr/local/etc/xray/config.json << EOF
       "settings": {
         "clients": [
           {
-            "id": "$uuid",
+            "id": "62e0d0c1-077a-4f2d-a822-aabf571333b2",
             "flow": "xtls-rprx-direct",
             "level": 0,
             "email": "admin@yourdomain.com"
@@ -174,6 +171,7 @@ cat > /usr/local/etc/xray/config.json << EOF
   ]
 }
 EOF
+systemctl stop xray
 echo
 echo -e "\033[49;37;7m install trojan-go \033[0m"
 echo -----------------------------------
@@ -249,6 +247,9 @@ RestartSec=1s
 WantedBy=multi-user.target
 EOF
 systemctl daemon-reload
+echo
+echo -e "\033[49;37;7m status \033[0m"
+echo -----------------------------------
 systemctl status nginx
 systemctl status trojan.service
 systemctl status xray
