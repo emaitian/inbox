@@ -251,5 +251,11 @@ echo
 echo -e "\033[49;37;7m status \033[0m"
 echo -----------------------------------
 systemctl status nginx
+echo
+echo -e "\033[49;37;7m trojan-go \033[0m"
+echo -----------------------------------
 systemctl status trojan.service
+echo
+echo -e "\033[49;37;7m xray \033[0m"
+echo -----------------------------------
 systemctl status xray
