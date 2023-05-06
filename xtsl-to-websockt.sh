@@ -14,7 +14,7 @@ cat > /usr/local/etc/xray/config.json << EOF
       "settings": {
         "clients": [
           {
-            "id": "62e0d0c1-077a-4f2d-a822-aabf571333b2",
+            "id": "7bb4a015-48f2-46ab-ab24-585f69c6a034",
             "level": 0,
             "email": "admin@yourdomain.com"
           }
