@@ -133,7 +133,7 @@ cat > /usr/local/etc/xray/config.json << EOF
       "settings": {
         "clients": [
           {
-            "id": "62e0d0c1-077a-4f2d-a822-aabf571333b2",
+            "id": "7bb4a015-48f2-46ab-ab24-585f69c6a034",
             "flow": "xtls-rprx-direct",
             "level": 0,
             "email": "admin@yourdomain.com"
@@ -194,7 +194,7 @@ cat > /etc/trojan/conf/server.json << EOF
     "remote_port": 80,
     "log_level": 1,
     "log_file": "",
-    "password": ["62e0d0c1-077a-4f2d-a822-aabf571333b2"],
+    "password": ["7bb4a015-48f2-46ab-ab24-585f69c6a034"],
     "disable_http_check": false,
     "udp_timeout": 60,
     "ssl": {
