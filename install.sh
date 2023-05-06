@@ -53,7 +53,7 @@ http {
 	##
 	server {
 		listen 80;
-		server_name eiven.top;
+		server_name nevie.buzz;
 		root /data/www;
 	}
 	include /etc/nginx/conf.d/*.conf;
@@ -101,11 +101,11 @@ echo
 echo -e "\033[49;37;7m install cert \033[0m"
 echo -----------------------------------
 curl https://get.acme.sh | sh -s email=emaitian@gmail.com
-~/.acme.sh/acme.sh --set-default-ca --server letsencrypt --issue -d eiven.top --nginx
+~/.acme.sh/acme.sh --set-default-ca --server letsencrypt --issue -d nevie.buzz --nginx
 mkdir -p /home/cert
-~/.acme.sh/acme.sh --install-cert -d eiven.top --fullchain-file /home/cert/fullchain.crt
-~/.acme.sh/acme.sh --install-cert -d eiven.top --key-file /home/cert/eiven.top.key
-chmod +r /home/cert/eiven.top.key
+~/.acme.sh/acme.sh --install-cert -d nevie.buzz --fullchain-file /home/cert/fullchain.crt
+~/.acme.sh/acme.sh --install-cert -d nevie.buzz --key-file /home/cert/nevie.buzz.key
+chmod +r /home/cert/nevie.buzz.key
 echo
 echo -e "\033[49;37;7m install xray \033[0m"
 echo -----------------------------------
@@ -156,7 +156,7 @@ cat > /usr/local/etc/xray/config.json << EOF
           "certificates": [
             {
               "certificateFile": "/home/cert/fullchain.crt",
-              "keyFile": "/home/cert/eiven.top.key"
+              "keyFile": "/home/cert/nevie.buzz.key"
             }
           ]
         }
@@ -201,12 +201,12 @@ cat > /etc/trojan/conf/server.json << EOF
         "verify": true,
         "verify_hostname": true, 
         "cert": "/home/cert/fullchain.crt",
-        "key": "/home/cert/eiven.top.key",
+        "key": "/home/cert/nevie.buzz.key",
         "key_password": "",
         "cipher": "",
         "curves": "",
         "prefer_server_cipher": false,
-        "sni": "eiven.top",
+        "sni": "nevie.buzz",
         "alpn": [
             "http/1.1"
         ],
@@ -220,7 +220,7 @@ cat > /etc/trojan/conf/server.json << EOF
     "websocket": {
         "enabled": true,
         "path": "/random",
-        "host": "eiven.top"
+        "host": "nevie.buzz"
     }
 }
 EOF
