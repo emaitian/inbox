@@ -101,7 +101,7 @@ echo
 echo -e "\033[49;37;7m install cert \033[0m"
 echo -----------------------------------
 curl https://get.acme.sh | sh -s email=emaitian@gmail.com
-~/.acme.sh/acme.sh --set-default-ca --server letsencrypt --issue -d nevie.buzz --nginx
+~/.acme.sh/acme.sh --set-default-ca --server letsencrypt --issue -d nevie.buzz --nginx /etc/nginx/nginx.conf
 mkdir -p /home/cert
 ~/.acme.sh/acme.sh --install-cert -d nevie.buzz --fullchain-file /home/cert/fullchain.crt
 ~/.acme.sh/acme.sh --install-cert -d nevie.buzz --key-file /home/cert/nevie.buzz.key
