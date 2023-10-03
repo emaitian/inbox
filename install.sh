@@ -53,7 +53,7 @@ http {
 	##
 	server {
 		listen 80;
-		server_name nevie.buzz;
+		server_name eiven.top;
 		root /data/www;
 	}
 	include /etc/nginx/conf.d/*.conf;
@@ -101,11 +101,11 @@ echo
 echo -e "\033[49;37;7m install cert \033[0m"
 echo -----------------------------------
 curl https://get.acme.sh | sh -s email=emaitian@gmail.com
-~/.acme.sh/acme.sh --set-default-ca --server letsencrypt --issue -d nevie.buzz --nginx /etc/nginx/nginx.conf
+~/.acme.sh/acme.sh --set-default-ca --server letsencrypt --issue -d eiven.top --nginx /etc/nginx/nginx.conf
 mkdir -p /home/cert
-~/.acme.sh/acme.sh --install-cert -d nevie.buzz --fullchain-file /home/cert/fullchain.crt
-~/.acme.sh/acme.sh --install-cert -d nevie.buzz --key-file /home/cert/nevie.buzz.key
-chmod +r /home/cert/nevie.buzz.key
+~/.acme.sh/acme.sh --install-cert -d eiven.top --fullchain-file /home/cert/fullchain.crt
+~/.acme.sh/acme.sh --install-cert -d eiven.top --key-file /home/cert/eiven.top.key
+chmod +r /home/cert/eiven.top.key
 echo
 echo -e "\033[49;37;7m install xray \033[0m"
 echo -----------------------------------
@@ -183,7 +183,7 @@ cat > /usr/local/etc/xray/config.json << EOF
           "certificates": [
             {
               "certificateFile": "/home/cert/fullchain.crt",
-              "keyFile": "/home/cert/nevie.buzz.key"
+              "keyFile": "/home/cert/eiven.top.key"
             }
           ]
         }
