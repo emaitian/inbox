@@ -1,4 +1,4 @@
-Debian 11 x64
+Debian 12 x64
 
 xray
 
