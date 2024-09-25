@@ -33,7 +33,7 @@ cat > /usr/local/etc/xray/config.json << EOF
             "certificates": [
                 {
                     "certificateFile": "/home/cert/fullchain.crt",
-                    "keyFile": "/home/cert/nevie.buzz.key"
+                    "keyFile": "/home/cert/eiven.cfd.key"
                 }
               ]
           }
